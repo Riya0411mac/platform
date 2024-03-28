@@ -22,6 +22,7 @@ import {
   Doc,
   DocumentQuery,
   IdMap,
+  Markup,
   Mixin,
   Ref,
   Space,
@@ -243,7 +244,7 @@ export interface CommonInboxNotification extends InboxNotification {
   headerObjectId?: Ref<Doc>
   headerObjectClass?: Ref<Class<Doc>>
   message?: IntlString
-  messageHtml?: string
+  messageHtml?: Markup
   props?: Record<string, any>
   icon?: Asset
   iconProps?: Record<string, any>

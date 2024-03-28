@@ -25,13 +25,14 @@ import {
   type Doc,
   type DocumentQuery,
   type Domain,
-  DOMAIN_MODEL,
-  Hierarchy,
-  IndexKind,
+  type Markup,
   type Ref,
   type Timestamp,
   type Tx,
-  type TxCUD
+  type TxCUD,
+  DOMAIN_MODEL,
+  Hierarchy,
+  IndexKind
 } from '@hcengineering/core'
 import {
   ArrOf,
@@ -45,7 +46,8 @@ import {
   UX,
   TypeBoolean,
   TypeDate,
-  TypeIntlString
+  TypeIntlString,
+  TypeMarkup
 } from '@hcengineering/model'
 import core, { TAttachedDoc, TClass, TDoc } from '@hcengineering/model-core'
 import preference, { TPreference } from '@hcengineering/model-preference'
@@ -267,8 +269,8 @@ export class TCommonInboxNotification extends TInboxNotification implements Comm
 
   headerIcon?: Asset
 
-  @Prop(TypeString(), notification.string.Message)
-    messageHtml?: string
+  @Prop(TypeMarkup(), notification.string.Message)
+    messageHtml?: Markup
 
   props?: Record<string, any>
   icon?: Asset
