@@ -17,6 +17,7 @@
 <script lang="ts">
   import { IntlString, getMetadata, translate } from '@hcengineering/platform'
   import presentation from '@hcengineering/presentation'
+  import { markupToJSON } from '@hcengineering/text'
   import { Button, IconSize, Loading, themeStore } from '@hcengineering/ui'
   import { AnyExtension, Editor, FocusPosition, mergeAttributes } from '@tiptap/core'
   import Collaboration, { isChangeOrigin } from '@tiptap/extension-collaboration'
@@ -137,8 +138,11 @@
     insertText: (text) => {
       editor?.commands.insertContent(text)
     },
-    insertTemplate: (name, text) => {
-      editor?.commands.insertContent(text)
+    insertMarkup: (markup) => {
+      editor?.commands.insertContent(markupToJSON(markup))
+    },
+    insertTemplate: (name, markup) => {
+      editor?.commands.insertContent(markupToJSON(markup))
     },
     focus: () => {
       focus()
