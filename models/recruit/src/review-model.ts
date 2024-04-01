@@ -1,5 +1,5 @@
 import { type Organization } from '@hcengineering/contact'
-import { type Domain, IndexKind, type Ref } from '@hcengineering/core'
+import { type Domain, type Markup, type Ref, IndexKind } from '@hcengineering/core'
 import { Collection, Index, Model, Prop, TypeMarkup, TypeRef, TypeString, UX } from '@hcengineering/model'
 import attachment from '@hcengineering/model-attachment'
 import calendar, { TEvent } from '@hcengineering/model-calendar'
@@ -52,7 +52,7 @@ export class TOpinion extends TAttachedDoc implements Opinion {
     comments?: number
 
   @Prop(TypeMarkup(), recruit.string.Description)
-    description!: string
+    description!: Markup
 
   @Prop(TypeString(), recruit.string.OpinionValue)
     value!: string

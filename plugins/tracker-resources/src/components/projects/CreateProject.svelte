@@ -30,7 +30,6 @@
   import { Asset } from '@hcengineering/platform'
   import presentation, { Card, createQuery, getClient } from '@hcengineering/presentation'
   import task, { ProjectType } from '@hcengineering/task'
-  import { StyledTextBox } from '@hcengineering/text-editor'
   import { IssueStatus, Project, TimeReportDayType } from '@hcengineering/tracker'
   import {
     Button,
@@ -371,12 +370,7 @@
         <Label label={tracker.string.Description} />
       </div>
       <div class="padding clear-mins">
-        <StyledTextBox
-          alwaysEdit
-          showButtons={false}
-          bind:content={description}
-          placeholder={tracker.string.IssueDescriptionPlaceholder}
-        />
+        <EditBox bind:value={description} placeholder={tracker.string.IssueDescriptionPlaceholder} />
       </div>
     </div>
   </div>

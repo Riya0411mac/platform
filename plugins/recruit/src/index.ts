@@ -21,6 +21,7 @@ import type {
   Attribute,
   Class,
   Doc,
+  Markup,
   Mixin,
   Ref,
   Space,
@@ -138,7 +139,7 @@ export interface Opinion extends AttachedDoc {
   attachedTo: Ref<Review>
   comments?: number
   attachments?: number
-  description: string
+  description: Markup
   value: string
 }
 
