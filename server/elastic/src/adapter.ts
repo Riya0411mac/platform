@@ -41,7 +41,7 @@ import { Domain } from 'node:domain'
 import { getMetadata } from '@hcengineering/platform'
 
 const DEFAULT_LIMIT = 200
-const indexName = getMetadata(serverCore.metadata.ElasticIndexName) ?? 'storage_index'
+const indexName = getMetadata(serverCore.metadata.ElasticIndexName) ?? 'local_storage_index'
 class ElasticAdapter implements FullTextAdapter {
   constructor (
     private readonly client: Client,
